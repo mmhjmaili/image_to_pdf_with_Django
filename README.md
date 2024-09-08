@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    Image to PDF Converter
-</head>
 <body>
 
 <h1>Image to PDF Converter</h1>
@@ -97,11 +92,6 @@
 
 <!DOCTYPE html>
 <html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    محول الصور إلى PDF
-</head>
 <body>
 
 <h1>محول الصور إلى PDF</h1>
@@ -187,4 +177,7 @@
 
 <h2>تحتاج إلى مساعدة؟</h2>
 <p>إذا كنت بحاجة إلى مساعدة، يمكنك التواصل مع مجتمع المطورين عبر تيليجرام:</p>
-<p><a href="https://t.me/Web_Developer_DevOps">https://t.me
+<p><a href="https://t.me/Web_Developer_DevOps">https://t.me/Web_Developer_DevOps</a></p>
+
+</body>
+</html>
