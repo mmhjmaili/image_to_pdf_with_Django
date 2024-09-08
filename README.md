@@ -92,3 +92,99 @@
 
 </body>
 </html>
+
+=======================================================================================================================================================================
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    محول الصور إلى PDF
+</head>
+<body>
+
+<h1>محول الصور إلى PDF</h1>
+
+<p>يتيح لك هذا التطبيق المبني على Django رفع الصور وتحويلها إلى ملفات PDF. يعتمد على مكتبة <strong>Pillow</strong> للتعامل مع الصور و<strong>ReportLab</strong> لتوليد ملفات PDF. تم تصميم التطبيق ليكون بسيطًا، مما يسمح للمستخدمين برفع صورة، تحويلها إلى PDF، وتنزيل الملف الناتج.</p>
+
+<h2>الميزات</h2>
+<ul>
+    <li><strong>رفع الصور</strong>: يدعم رفع الصور بصيغ مثل PNG وJPEG وغيرها.</li>
+    <li><strong>تحويل إلى PDF</strong>: يحول الصور المرفوعة إلى صيغة PDF بنفس أبعاد الصورة الأصلية.</li>
+    <li><strong>تنزيل ملف PDF</strong>: يوفر للمستخدم ملف PDF جاهزًا للتنزيل مباشرةً من المتصفح.</li>
+</ul>
+
+<h2>المتطلبات</h2>
+<ul>
+    <li>Python 3.x</li>
+    <li>Django 4.x</li>
+    <li>Pillow</li>
+    <li>ReportLab</li>
+</ul>
+
+<h2>التثبيت</h2>
+<ol>
+    <li>استنساخ المستودع:
+        <pre><code>git clone https://github.com/mmhjmaili/image_to_pdf_with_Django.git</code></pre>
+    </li>
+    <li>الانتقال إلى مجلد المشروع:
+        <pre><code>cd image_to_pdf_with_Django</code></pre>
+    </li>
+    <li>إنشاء التطبيق:
+        <pre><code>django-admin startapp imagetopdf</code></pre>
+    </li>
+    <li>تثبيت المتطلبات:
+        <pre><code>pip install -r requirements.txt</code></pre>
+    </li>
+    <li>تطبيق الترقيات:
+        <pre><code>python manage.py migrate</code></pre>
+    </li>
+    <li>تشغيل الخادم:
+        <pre><code>python manage.py runserver</code></pre>
+    </li>
+    <li>زيارة الرابط التالي في المتصفح لتحويل الصور إلى PDF:
+        <pre><code>http://127.0.0.1:8000/convert/</code></pre>
+    </li>
+</ol>
+
+<h2>الإعدادات</h2>
+<p>قبل تشغيل التطبيق، تأكد من تحديث الملفات التالية:</p>
+
+1. **إضافة التطبيق إلى <code>INSTALLED_APPS</code> في <code>project/settings.py</code>:**
+   <pre><code>'imagetopdf',</code></pre>
+
+2. **إضافة روابط التطبيق إلى <code>project/urls.py</code>:**
+   <pre><code>path('', include('imagetopdf.urls', namespace='imagetopdf'))</code></pre>
+
+<h2>الاستخدام</h2>
+<ol>
+    <li>انتقل إلى صفحة رفع الصور.</li>
+    <li>اختر صورة من جهازك.</li>
+    <li>اضغط على زر "تحويل إلى PDF".</li>
+    <li>سيكون ملف PDF الناتج جاهزًا للتنزيل فورًا.</li>
+</ol>
+
+<h2>هيكل المشروع</h2>
+<pre><code>.
+├── imagetopdf
+│   ├── migrations
+│   ├── forms.py                           # استمارات Django لرفع الصور
+│   ├── models.py                          # تعريف نموذج الصور
+│   ├── views.py                           # المنطق لتحويل الصور إلى PDF
+│   ├── urls.py                            # توجيه روابط التطبيق
+├── templates
+│   └── imagetopdf
+│       └── convert_image_to_pdf.html      # قالب HTML لرفع الصور
+├── media                                  # الصور المرفوعة وملفات PDF الناتجة
+├── requirements.txt                       # الاعتماديات الخاصة بالمشروع
+├── manage.py
+└── README.md
+</code></pre>
+
+<h2>المساهمة</h2>
+<p>المساهمات مرحب بها! إذا كانت لديك اقتراحات أو تحسينات، لا تتردد في فتح قضية أو إرسال طلب سحب.</p>
+
+<h2>تحتاج إلى مساعدة؟</h2>
+<p>إذا كنت بحاجة إلى مساعدة، يمكنك التواصل مع مجتمع المطورين عبر تيليجرام:</p>
+<p><a href="https://t.me/Web_Developer_DevOps">https://t.me
