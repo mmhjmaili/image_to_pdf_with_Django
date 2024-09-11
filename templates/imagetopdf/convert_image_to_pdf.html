@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert Image to PDF</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #e3e0db; 
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            margin: 1rem;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        h2 {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        button {
+            padding: 0.7rem 2rem;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #5a7699; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; 
+        }
+
+        input[type="file"] {
+            margin-bottom: 1rem;
+            display: block;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-top: 1.5rem;
+        }
+
+        a {
+            display: block;
+            margin: 1rem auto;
+            text-decoration: none;
+            color: #0056b3;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            iframe {
+                height: 400px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 900px;
+            }
+
+            iframe {
+                height: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Upload an Image to Convert to PDF</h1>
+        <h2>You can easily upload your images and convert them to PDF format in just seconds. Whether you need them for work or study, we're here to help simplify the process and achieve the best results. Try our service now and say goodbye to complexity!</h2>
+        
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Upload and Convert</button>
+        </form>
+
+        {% if pdf_url %}
+            <h2>Download and View PDF</h2>
+            <a href="{{ pdf_url }}" download>Click here to download your PDF</a>
+            <h3>PDF Preview</h3>
+            <iframe src="{{ pdf_url }}" type="application/pdf"></iframe>
+        {% endif %}
+
+        {% if whatsapp_url %}
+            <h2>Share via WhatsApp</h2>
+            <a href="{{ whatsapp_url }}" target="_blank">Click here to share via WhatsApp</a>
+        {% endif %}
+    </div>
+</body>
+</html>
